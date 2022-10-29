@@ -1,0 +1,37 @@
+{
+    "id": "02e0afa2-dd75-476a-8f37-aaf4b5a15484",
+    "author": "",
+    "widgets": [
+        {
+            "id": "HotelApp",
+            "name": "HotelApp",
+            "description": "A sample widget",
+            "icon": "",
+            "tags":[]
+        }
+    ],
+    "sidebarLinks": [
+        {
+            "id": "HotelAppLink",
+            "label": "",
+            "description": "",
+            "target": "",
+            "icon": "",
+            "roles":[]
+        }
+    ],
+    "uis": [
+        {
+            "id": "HotelAppLink",
+            "label":"",
+            "description": "",
+            "roles": []
+        }
+    ],
+    "menuItems": [
+        {
+            "id": "HotelAppLink",
+            "title": "HotelApp"
+        }
+    ]
+}
