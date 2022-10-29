@@ -8,9 +8,18 @@ import {Avatar, Typography, Card, CardContent, Slider,  Radio, Box, List, Rating
 import {useState} from "react";
 
 
+// import { BrowserRouter as Router,  Route} from "react-router-dom";
+
+// import Switch from "react-switch";
+
+  import { BrowserRouter, Route, Link ,   Routes} from "react-router-dom";
+
+
  import SideBar from './components/sidebar';
  import TopBar from './components/topbar';
  
+
+ //import SideBar1 from './components/sidebar1';
  
 
  import HomeWidget from './components/home';
@@ -32,25 +41,42 @@ const HotelAppComponent: React.FunctionComponent<IUIProps> = (props) => {
     return (
         <div className="hotel_container">
 
-                  <SideBar/>  
+                   
+                   
+
+
 
                   <div className="content">
+
+
+                  <BrowserRouter>
+                  <SideBar />   
+                        <Routes>
+                            <Route path="/" element={<HomeWidget />}>
+                            <Route path="/roomServices" element={<RoomServicesWidget />} />
+                            {/*  <Route path="blogs" element={<Blogs />} />
+                            <Route path="contact" element={<Contact />} />
+                            <Route path="*" element={<NoPage />} /> */}
+                            </Route>
+                        </Routes>
+                  </BrowserRouter>
+
 
                         <TopBar />
 
                         <div className="overall_widget">
 
-                             <HomeWidget />    
+                             {/* <HomeWidget />     */}
                             
-                             <RoomServicesWidget /> 
+                             {/* <RoomServicesWidget />  */}
 
-                             <LightControlWidget />  
+                             {/* <LightControlWidget />  
 
                              <AirConditionerWidget/>  
 
                              <MusicControllWidget />   
 
-                             <TelevisionControlWidget />  
+                             <TelevisionControlWidget />   */}
 
                         </div> 
 

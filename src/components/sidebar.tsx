@@ -1,5 +1,8 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
+
+ 
 
 // import {Routes, Route, useNavigate} from 'react-router-dom';
 
@@ -46,16 +49,22 @@ import TvIcon from '@mui/icons-material/Tv';
 
 
          <ul>
-            <li>
+            {/* <li>
                 <a href="#"><span className="sidebar-icon"><HomeIcon /></span> <em>HOME</em></a>
             </li>
             <li>
                 <a href="#"><span className="sidebar-icon"><SmsFailedIcon /></span> <em>ABOUT US</em></a>
-            </li>
+            </li> */}
             <li>
-                <a href="#"><span className="sidebar-icon"><RoomServiceIcon /></span> <em>ROOM SERVICE</em></a>
+                {/* <a href="#"><span className="sidebar-icon"><RoomServiceIcon /></span> <em>ROOM SERVICE</em></a> */}
+                {/* <Link to="/roomServices">ROOM SERVICE</Link> */}
+
+                <NavLink   to="/roomServices"> ROOM SERVICE</NavLink>
+ 
+
+
             </li>
-            <li>
+            {/* <li>
                 <a href="#"><span className="sidebar-icon"><FlatwareIcon /></span> <em>IN ROOM DINE</em></a>
             </li>
             <li>
@@ -69,7 +78,7 @@ import TvIcon from '@mui/icons-material/Tv';
             </li>
             <li>
                 <a href="#"><span className="sidebar-icon"><TvIcon /></span> <em>TV</em></a>
-            </li>
+            </li> */}
         </ul>  
         
 
