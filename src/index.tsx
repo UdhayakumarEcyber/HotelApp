@@ -8,18 +8,14 @@ import {Avatar, Typography, Card, CardContent, Slider,  Radio, Box, List, Rating
 import {useState} from "react";
 
 
-// import { BrowserRouter as Router,  Route} from "react-router-dom";
-
-// import Switch from "react-switch";
-
-  import { BrowserRouter, Route, Link ,   Routes} from "react-router-dom";
-
-
  import SideBar from './components/sidebar';
  import TopBar from './components/topbar';
  
-
- //import SideBar1 from './components/sidebar1';
+ import {
+    Routes, 
+    Route,
+    HashRouter
+  } from 'react-router-dom';
  
 
  import HomeWidget from './components/home';
@@ -40,48 +36,38 @@ interface IUIProps {
 const HotelAppComponent: React.FunctionComponent<IUIProps> = (props) => {
     return (
         <div className="hotel_container">
-
-                   
-                   
+            <HashRouter>
 
 
+                  <SideBar/>  
 
                   <div className="content">
-
-
-                  <BrowserRouter>
-                  <SideBar />   
-                        <Routes>
-                            <Route path="/" element={<HomeWidget />}>
-                            <Route path="/roomServices" element={<RoomServicesWidget />} />
-                            {/*  <Route path="blogs" element={<Blogs />} />
-                            <Route path="contact" element={<Contact />} />
-                            <Route path="*" element={<NoPage />} /> */}
-                            </Route>
-                        </Routes>
-                  </BrowserRouter>
-
 
                         <TopBar />
 
                         <div className="overall_widget">
+                            <Routes>
+                                <Route path="/" element={<HomeWidget />} />
+                                <Route path="room-services" element={<RoomServicesWidget />} />
+                                <Route path="light-control" element={<LightControlWidget />} />
+                                <Route path="air-conditioner" element={<AirConditionerWidget />} />
+                                <Route path="music-control" element={<MusicControllWidget />} />
+                                <Route path="television-control" element={<TelevisionControlWidget />} />
 
-                             {/* <HomeWidget />     */}
+                             {/* <HomeWidget />    
                             
-                             {/* <RoomServicesWidget />  */}
-
-                             {/* <LightControlWidget />  
-
+                             <RoomServicesWidget /> 
+                             <LightControlWidget />  
                              <AirConditionerWidget/>  
-
                              <MusicControllWidget />   
-
                              <TelevisionControlWidget />   */}
+                            </Routes>
 
                         </div> 
 
                 </div>
              
+            </HashRouter>
         </div>
     )
 };
@@ -120,8 +106,7 @@ registerLink({
 
  
 registerUI({
-    id:"hotelapp",
+    id:"hotel-app",
     component: HotelAppComponent,
     showDefaultHeader : false
 });
- 

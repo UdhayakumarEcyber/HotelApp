@@ -1,16 +1,8 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
-import {NavLink} from "react-router-dom";
-
- 
 
 // import {Routes, Route, useNavigate} from 'react-router-dom';
 
-import {
-    BrowserRouter as Router, 
-    Routes, 
-    Route
-  } from 'react-router-dom';
 
 // import HomeWidget from './home';
 // import TelevisionControlWidget from './televisionControl';
@@ -49,36 +41,30 @@ import TvIcon from '@mui/icons-material/Tv';
 
 
          <ul>
-            {/* <li>
-                <a href="#"><span className="sidebar-icon"><HomeIcon /></span> <em>HOME</em></a>
+            <li>
+                <a href="#/"><span className="sidebar-icon"><HomeIcon /></span> <em>HOME</em></a>
             </li>
             <li>
                 <a href="#"><span className="sidebar-icon"><SmsFailedIcon /></span> <em>ABOUT US</em></a>
-            </li> */}
-            <li>
-                {/* <a href="#"><span className="sidebar-icon"><RoomServiceIcon /></span> <em>ROOM SERVICE</em></a> */}
-                {/* <Link to="/roomServices">ROOM SERVICE</Link> */}
-
-                <NavLink   to="/roomServices"> ROOM SERVICE</NavLink>
- 
-
-
             </li>
-            {/* <li>
+            <li>
+                <a href="#/room-services"><span className="sidebar-icon"><RoomServiceIcon /></span> <em>ROOM SERVICE</em></a>
+            </li>
+            <li>
                 <a href="#"><span className="sidebar-icon"><FlatwareIcon /></span> <em>IN ROOM DINE</em></a>
             </li>
             <li>
-                <a href="#"><span className="sidebar-icon"><EmojiObjectsIcon /></span> <em>LIGHTING</em></a>
+                <a href="#/light-control"><span className="sidebar-icon"><EmojiObjectsIcon /></span> <em>LIGHTING</em></a>
             </li>
             <li>
-                <a href="#"><span className="sidebar-icon"><AirIcon /></span><em> A/C</em></a>
+                <a href="#/air-conditioner"><span className="sidebar-icon"><AirIcon /></span><em> A/C</em></a>
             </li>
             <li>
-                <a href="#"><span className="sidebar-icon"><MusicNoteIcon /></span><em> MUSIC</em></a>
+                <a href="#/music-control"><span className="sidebar-icon"><MusicNoteIcon /></span><em> MUSIC</em></a>
             </li>
             <li>
-                <a href="#"><span className="sidebar-icon"><TvIcon /></span> <em>TV</em></a>
-            </li> */}
+                <a href="#/television-control"><span className="sidebar-icon"><TvIcon /></span> <em>TV</em></a>
+            </li>
         </ul>  
         
 
