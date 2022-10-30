@@ -1,6 +1,6 @@
 {
     "id": "26ba23a2-b541-4238-c01f-5621594d7ac4",
-    "author": "",
+    "author": "new",
     "widgets": [
          
     ],
@@ -9,8 +9,8 @@
     ],
     "uis": [
        {
-           "id": "hotelapp",
-           "label": "",
+           "id": "hotel-app",
+           "label": "Hotel App",
            "description": ""
         }
     ],
