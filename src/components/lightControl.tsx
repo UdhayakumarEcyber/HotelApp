@@ -139,11 +139,13 @@ const Moodes = () => (
 
                         <Modal title ={'Wall Light'} show={showRoomserviceModal} onOpen={() => { }} onClose={() => setshowRoomserviceModal(false)} >
             
-                                <WidgetWrapper className="roomservices_popup">   
+                                <WidgetWrapper className="roomservices_popup light-popup">   
 
                                     <div className="roomservices_popup-content">    
                                         
-                                        
+                                            <div className="light-box">
+                                                <div className="light-box-top"></div> 
+                                            </div>
 
                                         <div className="mood_light_change">
                                             <Radio {...controlProps('a')} />
@@ -185,7 +187,7 @@ const Moodes = () => (
                 </div>
                 
                 <div className="control_light lamp_light">
-                    <TitleBar title={'Lamp'}> 
+                    <TitleBar title={'Bedside Lamp'}> 
                             <Checkbox onChange={onChangeCheckboxDef3} checked={defCheckState3} type="switch-box"/>
                     </TitleBar> 
 

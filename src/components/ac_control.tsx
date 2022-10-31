@@ -97,7 +97,7 @@ export default class App extends React.Component<{},IParkingState> {
     return (
       <div className="progressbar_wrapper">
 
-        <CircularProgressBar strokeWidth={25} sqSize={300} percentage={this.state.percentage} isActive={undefined}/>
+        <CircularProgressBar strokeWidth={24} sqSize={240} percentage={this.state.percentage} isActive={undefined}/>
         
           <div className="progressBar">
               <em>Fan Speed</em>

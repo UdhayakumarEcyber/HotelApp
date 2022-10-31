@@ -22,89 +22,11 @@ import BathtubIcon from '@mui/icons-material/Bathtub';
 import ShowerIcon from '@mui/icons-material/Shower';
 import DoNotStepIcon from '@mui/icons-material/DoNotStep';
 
-const RoomServicesWidget: React.FunctionComponent<IWidgetProps> = (props) => {  
+const DealsPopup: React.FunctionComponent<IWidgetProps> = (props) => {  
 
     let [showRoomserviceModal, setshowRoomserviceModal] = React.useState(false);
     let [showLinkWidget, setShowLinkWidget] = React.useState(false); 
-   
-var roomServicesList = [ 
-    {
-    "id": "1",
-    "label": "Laundry Bag", 
-     'img' :  <LocalMallIcon />  
-    },
-    {
-    "id": "2",
-    "label": "Laundary", 
-    "img": <LocalMallIcon />   
-    },
-    {
-    "id": "3",
-    "label": "Water", 
-    "img": <OpacityIcon />  
-    },
-    {
-    "id": "4",
-    "label": "Slippers", 
-    "img": <DoNotStepIcon />  
-    },
-    {
-    "id": "5",
-    "label": "Toilet Roll", 
-    "img": <WcIcon />  
-    },
-    {
-    "id": "6",
-    "label": "Hand Towel", 
-    "img": <DryCleaningIcon />  
-    },
-    {
-    "id": "7",
-    "label": "Bath Towel", 
-    "img": <DryCleaningIcon />  
-    },
-    {
-    "id": "8",
-    "label": "Shampoo", 
-    "img": <BathtubIcon />   
-    },
-    {
-    "id": "9",
-    "label": "Body Wash", 
-    "img": <ShowerIcon />  
-    },
-    {
-    "id": "10",
-    "label": "Soap", 
-    "img": <SoapIcon />  
-   
-    },
-    {
-    "id": "11",
-    "label": "Laundary", 
-    "img": <LocalMallIcon />  
-    },
-    {
-    "id": "12",
-    "label": "Laundary", 
-    "img": <LocalMallIcon />  
-    } 
-];
-
-
-const RoomServices = () => (
-<ul className="room_services_list">
-  {roomServicesList.map(item => (
-    <li key={item.id}>   
-       {/* <div className="pict"><img src={item.img} /></div>   */}
-       <div className="icon">{item.img}</div>  
-      {/* <div className="icon"><PoolIcon /></div>  */}
-      <button className="btn showcase" type="submit" onClick={() => setshowRoomserviceModal(true)}> {item.label}</button> 
-
-    </li>
-  ))}
-</ul>
-); 
+     
 
 
 let [num, setNum]= useState(0);
@@ -131,11 +53,11 @@ let handleChange = (e:any)=>{
 
       <div className="facility_widget-content">
             <div className="room_services">   
-                                 <h5>ROOM SERVICES</h5>  
 
-                                <RoomServices />  
+            <button className="btn showcase" type="submit" onClick={() => setshowRoomserviceModal(true)}> Udhaya </button> 
+ 
 
-                                <Modal title ={'Laundry Bag'} show={showRoomserviceModal} onOpen={() => { }} onClose={() => setshowRoomserviceModal(false)} >
+                                <Modal title ={'Deals Popup'} show={showRoomserviceModal} onOpen={() => { }} onClose={() => setshowRoomserviceModal(false)} >
                        
                                     <WidgetWrapper className="roomservices_popup">   
 
@@ -177,4 +99,4 @@ let handleChange = (e:any)=>{
 }
   
 
-export default RoomServicesWidget;
+export default DealsPopup;

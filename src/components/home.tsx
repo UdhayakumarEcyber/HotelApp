@@ -59,7 +59,6 @@ export default class HomeWidget extends React.Component<{},IParkingState> {
 
             <div className="row">
 
-                <DealWidget/>      
                 <DealWidget/>     
 
             </div>   

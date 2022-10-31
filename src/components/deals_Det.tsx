@@ -1,127 +1,14 @@
-// import * as React from "react"; 
  
-// import { TitleBar, FilterPanel, Checkbox, RadialGauge, TimeRangePicker, SearchBox, WidgetWrapper, Select, FormField, Label, Button, Input, LinkWidgetContainer, Modal } from "uxp/components";
- 
-
-// interface IWidgetProps{
-     
-// } 
-
- 
-
-//  const DealWidget: React.FunctionComponent<IWidgetProps> = (props) => {
-
-  
-// let [showFoodWidget, setshowFoodWidget] = React.useState(false); 
-
-
-  
-      
-
-//     return (
-
-//         <div className="deal_widget">  
-
-//          <div className="title">  Deals </div> 
-
-//         <div className="deal_widget-content">   
-        
-//             <div className="deal_widget-content-lft">  
-//                 <p>BUY ANY MEDIUM PIZZA &nbsp; GET A CLASSIC PERSONAL PAN PIZZA FOR</p> 
-//                 <button className="prize"  onClick={() => setshowFoodWidget(true)}>Rs. 500</button> 
-//             </div>
-
-//             <div className="deal_widget-content-rgt">   
-//                 <div className="pizza"><img src='https://static.iviva.com/images/Udhayimages/Hotel/pizza.png'></img></div> 
-//             </div> 
-
-//         </div>  
-        
-
-//         <LinkWidgetContainer  className="facility_widget" show={showFoodWidget} > 
-
-//             <div className="modal-header">
-                
-//                 <div className="facility_widget-top"> 
-
-//                     <div className="model_close"  onClick={() => setshowFoodWidget(false)}></div> 
-
-//                 </div>  
-            
-//             </div> 
- 
-
-//             <div className="facility_widget-content"> 
-
-//                 <div className="food_offers">
-//                     <h6>IN ROOM <span>DINE</span> </h6>
-//                     <h3>Get food delivered to your room step.   <div className="offer_percentage"> 15% OFF</div></h3>
-//                 </div>
-
-//                 <div className="food_category">   
-//                         <h5>Food Categories</h5>  
-//                         <FoodList /> 
-
-//                         <WidgetWrapper className="my_order">
-//                             <TitleBar title={'My Order'} /> 
-
-//                             <div className="my_order-content">
-
-//                                 <OrderList />
-
-//                                 <ul className="orderlist total_orderlist">
-                                   
-//                                     <li>     
-//                                         <div className="order-name">Total Amount</div> 
-//                                         <div className="order-prize">LKR 700.00</div> 
-//                                     </li> 
-                                    
-//                                 </ul>
-
-//                                 <button className="checkout">Check out</button> 
-
-//                             </div> 
-
-//                         </WidgetWrapper>
-
-
-//                         <WidgetWrapper className="my_order_food">
-//                             <TitleBar title={'Pizza'} /> 
-
-//                             <div className="my_order_food-content">
-
-//                                 <OrderListFood />  
-
-//                             </div> 
-
-//                         </WidgetWrapper>
-
-
-//                  </div>
-
-//             </div> 
-    
-//         </LinkWidgetContainer>
-
-//     </div>
-//     );
- 
-// }
- 
-
-// export default DealWidget;
-
-
-
 
 import * as React from 'react';
 import { TitleBar, FilterPanel, Checkbox, RadialGauge, TimeRangePicker, SearchBox, WidgetWrapper, Select, FormField, Label,   Input, LinkWidgetContainer, Modal } from "uxp/components";
 import {Button, Dialog, AppBar, Toolbar, IconButton, Slide } from '@mui/material'; 
+import {useState} from "react";
 
-import { TransitionProps } from '@mui/material/transitions';
+import { TransitionProps } from '@mui/material/transitions'; 
+import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace'; 
+import LocalMallIcon from '@mui/icons-material/LocalMall';
 
- 
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 
 const Transition = React.forwardRef(function Transition(
@@ -138,6 +25,10 @@ const Transition = React.forwardRef(function Transition(
 export default function DealWidget() {
   const [open, setOpen] = React.useState(false);
 
+  let [showModal, setShowModal] = React.useState(false); 
+  let [showRoomserviceModal, setshowRoomserviceModal] = React.useState(false);
+  let [showLinkWidget, setShowLinkWidget] = React.useState(false); 
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -151,28 +42,28 @@ export default function DealWidget() {
   
 var dataset1 = [ 
   {
-   "id": "Burgers",
-    "label": "Burgers", 
-    "img": "https://static.iviva.com/images/Udhayimages/Hotel/burger.jpg"  
+   "id": "Breakfast",
+    "label": "Breakfast", 
+    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Ramen2.jpg"  
   },
   {
-   "id": "Pizza",
-    "label": "Pizza", 
-    "img": "https://static.iviva.com/images/Udhayimages/Hotel/pizza1.jpg"  
+   "id": "Asian",
+    "label": "Asian", 
+    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Nasi-Lemak.jpg"  
   },
   {
-   "id": "Indian",
-    "label": "Indian", 
-    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Indian.jpg" 
+   "id": "Italian",
+    "label": "Italian", 
+    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Italian.jpeg" 
   },
   {
-   "id": "Chinese",
-    "label": "Chinese", 
-    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Chinese.jpg" 
+   "id": "FastFood",
+    "label": "Fast Food", 
+    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Chinese-food2.jpg" 
   },
   {
-   "id": "Bakery",
-    "label": "Bakery", 
+   "id": "Beverages",
+    "label": "Beverages", 
     "img": "https://static.iviva.com/images/Udhayimages/Hotel/burger.jpg"
   },
   {
@@ -181,9 +72,9 @@ var dataset1 = [
     "img": "https://static.iviva.com/images/Udhayimages/Hotel/Desserts.jpg" 
   },
   {
-    "id": "Fast Food",
-    "label": "Fast Food", 
-    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Fast_Food.webp" 
+    "id": "Chinese",
+    "label": "Chinese", 
+    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Chinese-food.jpg" 
   },
   {
     "id": "Tea/Drinks",
@@ -196,8 +87,8 @@ var dataset1 = [
 var orderItem = [ 
   {
       "id": "1",
-      "order_name": "Bacon cheese pizza", 
-      "order_prize": "LKR 700.00"  
+      "order_name": "Nasi Lemak", 
+      "order_prize": "$20.00"  
   }   
 ];
 
@@ -205,51 +96,51 @@ var orderItem = [
 var orderFood = [ 
   {
       "id": "1",
-      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/pizza1.jpg", 
-      "food_name": "Bacon cheese pizza", 
-      "food_prize": "LKR.1500.00"  
+      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Nasi-Lemak.jpg", 
+      "food_name": "Nasi Lemak", 
+      "food_prize": "$20.00"  
   },
   {
       "id": "2",
-      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/pizza1.jpg", 
-      "food_name": "Bacon cheese pizza", 
-      "food_prize": "LKR.1500.00"  
+      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Chicken-rice.jpg", 
+      "food_name": "Chicken Rice", 
+      "food_prize": "$20.00"  
   },
   {
       "id": "3",
-      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/pizza1.jpg", 
-      "food_name": "Bacon cheese pizza", 
-      "food_prize": "LKR.1500.00"  
+      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Friedrice.jpg", 
+      "food_name": "Chicken Fried Rice", 
+      "food_prize": "$20.00"  
   },
   {
       "id": "4",
-      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/pizza1.jpg", 
-      "food_name": "Bacon cheese pizza", 
-      "food_prize": "LKR.1500.00"  
+      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Chinese-food.jpg", 
+      "food_name": "Nasi Lemak", 
+      "food_prize": "$20.00"  
   },
   {
       "id": "5",
-      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/pizza1.jpg", 
-      "food_name": "Bacon cheese pizza", 
-      "food_prize": "LKR.1500.00"  
+      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Wrap3.jpg", 
+      "food_name": "Chicken Wrap", 
+      "food_prize": "$20.00"  
   },
   {
       "id": "6",
-      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/pizza1.jpg", 
-      "food_name": "Bacon cheese pizza", 
-      "food_prize": "LKR.1500.00"  
+      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Prata3.jpeg", 
+      "food_name": "Parata", 
+      "food_prize": "$20.00"  
   },
   {
       "id": "7",
-      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/pizza1.jpg", 
-      "food_name": "Bacon cheese pizza", 
-      "food_prize": "LKR.1500.00"  
+      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Nasi-Lemak.jpg", 
+      "food_name": "Nasi Lemak", 
+      "food_prize": "$20.00"  
   },
   {
       "id": "8",
-      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/pizza1.jpg", 
-      "food_name": "Bacon cheese pizza", 
-      "food_prize": "LKR.1500.00"  
+      "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Nasi-Lemak.jpg", 
+      "food_name": "Nasi Lemak", 
+      "food_prize": "$20.00"  
   }   
 ];
 
@@ -283,7 +174,7 @@ const OrderListFood = () => (
   <ul className="orderfood_list">
     {orderFood.map(item => (
       <li key={item.id}>  
-        <button className="food_add-btn">+</button>  
+        <button className="food_add-btn" onClick={() => setShowModal(true)}>+</button>  
         <div className="order-img"><img src={item.food_img} /></div>  
         <div className="order-name">{item.food_name}</div> 
         <div className="order-prize">{item.food_prize}</div> 
@@ -294,24 +185,60 @@ const OrderListFood = () => (
 
 
 
+let [num, setNum]= useState(0);
+let incNum =()=>{
+  if(num<10)
+  {
+  setNum(Number(num)+1);
+  }
+};
+let decNum = () => {
+   if(num>0)
+   {
+    setNum(num - 1);
+   }
+}
+let handleChange = (e:any)=>{
+ setNum(e.target.value);
+}
+
+
   return (
+
+    <>
+
+    
+        <div className="deal_widget">  
+
+                <div className="title">  Deals </div> 
+
+                <div className="deal_widget-content">   
+                    
+                    <div className="deal_widget-content-lft">  
+                      <p>BUY ANY MEDIUM PIZZA &nbsp; GET A CLASSIC PERSONAL PAN PIZZA FOR</p> 
+                      <button className="prize">$ 30 only</button> 
+                  </div>
+
+                    <div className="deal_widget-content-rgt">   
+                      <div className="pizza"><img src='https://static.iviva.com/images/Udhayimages/Hotel/pizza.png'></img></div> 
+                  </div> 
+
+                </div>   
+        
+        </div>
     
 
-    <div className="deal_widget">  
+    <div className="deal_widget deal_offer">  
 
-        <div className="title">  Deals </div> 
+        {/* <div className="title">  Deals </div>  */}
     
          <div className="deal_widget-content">   
             
-            <div className="deal_widget-content-lft">  
-              <p>BUY ANY MEDIUM PIZZA &nbsp; GET A CLASSIC PERSONAL PAN PIZZA FOR</p> 
-              <button className="prize"   onClick={handleClickOpen}>Rs. 500</button> 
-          </div>
-
-            <div className="deal_widget-content-rgt">   
-              <div className="pizza"><img src='https://static.iviva.com/images/Udhayimages/Hotel/pizza.png'></img></div> 
+            <div className="deal_widget-content-lft" style={{width: "100%"}}>
+              <h2>10% OFF</h2>  
+              <p>ON YOUR FIRST INROOM DINNING TRANSACTION.</p> 
+              <button className="prize"   onClick={handleClickOpen}>Order Now</button> 
           </div> 
-
         </div>  
 
          
@@ -365,7 +292,7 @@ const OrderListFood = () => (
                                 
                                   <li>     
                                       <div className="order-name">Total Amount</div> 
-                                      <div className="order-prize">LKR 700.00</div> 
+                                      <div className="order-prize">$20.00</div> 
                                   </li> 
                                   
                               </ul>
@@ -385,6 +312,42 @@ const OrderListFood = () => (
 
                               <OrderListFood />  
 
+                              
+                              <Modal title ={'Deals Popup'} show={showRoomserviceModal} onOpen={() => { }} onClose={() => setshowRoomserviceModal(false)} >
+                       
+                                    <WidgetWrapper className="roomservices_popup">   
+
+                                        <div className="roomservices_popup-content">    
+                                            
+                                            <div className="roomservices-box">
+
+                                                 <LocalMallIcon />  
+                                                     
+                                            </div>
+
+                                            <div className="inc-dec-btn"> 
+                                                <div className="inc-dec-btn-cont"> 
+                                                 
+                                                    <button className="btn btn-outline-primary" type="button" onClick={decNum}>-</button>
+                                                
+                                                    <input type="text" className="form-control" value={num} onChange={handleChange}/>
+                                                
+                                                    <button className="btn btn-outline-primary" type="button" onClick={incNum}>+</button>
+                                                
+                                                </div>
+                                            </div>
+
+                                            <button className="btn showcase" type="submit" onClick={() => setShowLinkWidget(true)}>
+                                                    Add 1 to Basket  <span>LKR 500.00</span>
+                                            </button>
+                                                
+                                        </div>  
+
+                                    </WidgetWrapper>
+
+                                </Modal> 
+
+
                           </div> 
 
                       </div>
@@ -395,8 +358,13 @@ const OrderListFood = () => (
               </div> 
 
             {/* <GymnasiumDetails /> */}
+
+
+            
         
       </Dialog>
     </div>
+
+    </>
   );
 }

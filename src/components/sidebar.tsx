@@ -30,7 +30,7 @@ import TvIcon from '@mui/icons-material/Tv';
 
  const SideBar: React.FunctionComponent<IWidgetProps> = (props) => {  
 
-  
+     
 
     return (
         <div className="sideBar">
@@ -41,11 +41,11 @@ import TvIcon from '@mui/icons-material/Tv';
 
 
          <ul>
-            <li>
+            <li >
                 <a href="#/"><span className="sidebar-icon"><HomeIcon /></span> <em>HOME</em></a>
             </li>
             <li>
-                <a href="#"><span className="sidebar-icon"><SmsFailedIcon /></span> <em>ABOUT US</em></a>
+                <a href="#"><span className="sidebar-icon"><SmsFailedIcon /></span> <em>HOTEL SERVICES</em></a>
             </li>
             <li>
                 <a href="#/room-services"><span className="sidebar-icon"><RoomServiceIcon /></span> <em>ROOM SERVICE</em></a>
@@ -76,4 +76,8 @@ import TvIcon from '@mui/icons-material/Tv';
  
 
   export default SideBar;
+
+function useState(arg0: boolean): [any, any] {
+    throw new Error("Function not implemented.");
+}
  
