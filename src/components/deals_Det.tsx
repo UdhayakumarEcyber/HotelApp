@@ -64,12 +64,12 @@ var dataset1 = [
   {
    "id": "Beverages",
     "label": "Beverages", 
-    "img": "https://static.iviva.com/images/Udhayimages/Hotel/burger.jpg"
+    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/beverage2.jpg"
   },
   {
     "id": "Desserts",
     "label": "Desserts", 
-    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Desserts.jpg" 
+    "img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Spring-Strawberry-Cake.jpg" 
   },
   {
     "id": "Chinese",
@@ -115,7 +115,7 @@ var orderFood = [
   {
       "id": "4",
       "food_img": "https://static.iviva.com/images/Udhayimages/Hotel/Food/Chinese-food.jpg", 
-      "food_name": "Nasi Lemak", 
+      "food_name": "Chinese Food", 
       "food_prize": "$20.00"  
   },
   {
@@ -170,11 +170,14 @@ const OrderList = () => (
 );
 
 
+
+
 const OrderListFood = () => (
   <ul className="orderfood_list">
     {orderFood.map(item => (
       <li key={item.id}>  
-        <button className="food_add-btn" onClick={() => setShowModal(true)}>+</button>  
+        {/* <button className="food_add-btn" onClick={() => setShowModal(true)}>+</button>  */}
+        <button className="btn showcase food_add-btn" type="submit" onClick= {() => setshowRoomserviceModal(true)} >+</button>  
         <div className="order-img"><img src={item.food_img} /></div>  
         <div className="order-name">{item.food_name}</div> 
         <div className="order-prize">{item.food_prize}</div> 
@@ -313,39 +316,43 @@ let handleChange = (e:any)=>{
                               <OrderListFood />  
 
                               
-                              <Modal title ={'Deals Popup'} show={showRoomserviceModal} onOpen={() => { }} onClose={() => setshowRoomserviceModal(false)} >
+                              <Modal title ={'Nasi Lemak'} show={showRoomserviceModal} onOpen={() => { }} onClose={() => setshowRoomserviceModal(false)} >
                        
-                                    <WidgetWrapper className="roomservices_popup">   
+                                  <WidgetWrapper className="roomservices_popup food_order_popup">   
 
-                                        <div className="roomservices_popup-content">    
-                                            
-                                            <div className="roomservices-box">
+                                      <div className="roomservices_popup-content food_order_popup_content">  
 
-                                                 <LocalMallIcon />  
-                                                     
-                                            </div>
+                                        <em>$20.00</em>
 
-                                            <div className="inc-dec-btn"> 
-                                                <div className="inc-dec-btn-cont"> 
-                                                 
-                                                    <button className="btn btn-outline-primary" type="button" onClick={decNum}>-</button>
+                                        <p>Malaysian coconut milk rice, served with sambal, fried crispy anchovies, toasted peanuts and cucumber.</p>
+
+                                       <h6>Special Note</h6>
+                                      
+                                       <textarea>Add a note (e.g. no onions)</textarea>
+
+                                          <div className="inc-dec-btn"> 
+                                              <div className="inc-dec-btn-cont"> 
                                                 
-                                                    <input type="text" className="form-control" value={num} onChange={handleChange}/>
-                                                
-                                                    <button className="btn btn-outline-primary" type="button" onClick={incNum}>+</button>
-                                                
-                                                </div>
-                                            </div>
+                                                  <button className="btn btn-outline-primary" type="button" onClick={decNum}>-</button>
+                                              
+                                                  <input type="text" className="form-control" value={num} onChange={handleChange}/>
+                                              
+                                                  <button className="btn btn-outline-primary rt-btn" type="button" onClick={incNum}>+</button>
+                                              
+                                              </div>
+                                          </div>
 
-                                            <button className="btn showcase" type="submit" onClick={() => setShowLinkWidget(true)}>
-                                                    Add 1 to Basket  <span>LKR 500.00</span>
-                                            </button>
-                                                
-                                        </div>  
+                                          <div className="food_order_popup-btn"> 
+                                              <button className="btn showcase" type="submit" onClick={() => setShowLinkWidget(true)}>
+                                                      Add 1 to Basket  <span>$20.00</span>
+                                              </button>
+                                          </div>
+                                              
+                                      </div>  
 
-                                    </WidgetWrapper>
+                                  </WidgetWrapper>
 
-                                </Modal> 
+                              </Modal> 
 
 
                           </div> 

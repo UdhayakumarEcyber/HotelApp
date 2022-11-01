@@ -45,13 +45,13 @@ import TvIcon from '@mui/icons-material/Tv';
                 <a href="#/"><span className="sidebar-icon"><HomeIcon /></span> <em>HOME</em></a>
             </li>
             <li>
-                <a href="#"><span className="sidebar-icon"><SmsFailedIcon /></span> <em>HOTEL SERVICES</em></a>
+                <a href="#/hotel-services"><span className="sidebar-icon"><SmsFailedIcon /></span> <em>HOTEL SERVICES</em></a>
             </li>
             <li>
                 <a href="#/room-services"><span className="sidebar-icon"><RoomServiceIcon /></span> <em>ROOM SERVICE</em></a>
             </li>
             <li>
-                <a href="#"><span className="sidebar-icon"><FlatwareIcon /></span> <em>IN ROOM DINE</em></a>
+                <a href="#/hotel-dine"><span className="sidebar-icon"><FlatwareIcon /></span> <em>IN ROOM DINE</em></a>
             </li>
             <li>
                 <a href="#/light-control"><span className="sidebar-icon"><EmojiObjectsIcon /></span> <em>LIGHTING</em></a>

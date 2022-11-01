@@ -19,6 +19,8 @@ import {useState} from "react";
  
 
  import HomeWidget from './components/home';
+ import HotelServicesWidget from './components/hotelServices';
+ import RoomDineWidget from './components/roomInDine';
  import TelevisionControlWidget from './components/televisionControl';
  import MusicControllWidget from './components/musicControl'; 
  import AirConditionerWidget from './components/airConditioner'; 
@@ -48,7 +50,9 @@ const HotelAppComponent: React.FunctionComponent<IUIProps> = (props) => {
                         <div className="overall_widget">
                             <Routes>
                                 <Route path="/" element={<HomeWidget />} />
+                                <Route path="hotel-services" element={<HotelServicesWidget />} /> 
                                 <Route path="room-services" element={<RoomServicesWidget />} />
+                                <Route path="hotel-dine" element={<RoomDineWidget />} /> 
                                 <Route path="light-control" element={<LightControlWidget />} />
                                 <Route path="air-conditioner" element={<AirConditionerWidget />} />
                                 <Route path="music-control" element={<MusicControllWidget />} />

@@ -24,6 +24,7 @@
     "react-router-dom": "^6.0.1",
     "react-switch": "^7.0.0",
     "react.video": "^1.0.14",
+    "reactjs-popup": "^2.0.5",
     "reactjs-videobg": "^1.3.0",
     "sass": "^1.55.0",
     "sass-loader": "^8.0.2",

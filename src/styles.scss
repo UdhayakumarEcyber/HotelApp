@@ -1750,6 +1750,87 @@
                     }
                 }
             }
+
+            &.food_order_popup{
+                .food_order_popup_content{
+                    text-align: left;
+                    width: 60%;
+                    margin: 0 16%;
+                    color: #fff;
+                    em{
+                        font-style: normal;
+                        font-size: 1.1em;
+                        display: inline-block;
+                        padding: 0;
+                        margin: 1em 0 0 0;
+                        width: 100%;
+                    }
+                    p{
+                        font-size: 0.95em;
+                        color: #BCBCBC;
+                        display: inline-block;
+                        padding: 0;
+                        margin: 2em 0 0 0;
+                        width: 100%;
+                    }
+                    h6{
+                        font-size: 1.3em;
+                        display: inline-block;
+                        padding: 0;
+                        margin: 2em 0 0em 0;
+                        width: 100%;
+                    }
+                    
+                    textarea{
+                        background-color: #5D5E5E;
+                        border: 1px solid #4c4c4c;
+                        display: inline-block;
+                        width: 100%;
+                        min-height: 120px;
+                        border-radius: 10px;
+                        margin-top: 2em;
+                        padding: 1.5em 1.5em;
+                        color: #A5A5A5;
+                    }
+
+                    .inc-dec-btn{
+                        text-align: left;
+
+                        .inc-dec-btn-cont{
+                            width: 30%;
+                            .btn{
+                                float: left;
+                                // width: 20%;
+                            }
+                            .rt-btn{
+                                float: right;
+                            }
+
+                            input.form-control{
+                                width: 45%;
+                            }
+                        }
+                        
+                    }
+                    .food_order_popup-btn{
+                        display: inline-block;
+                        width: 100%;
+                        text-align: center;
+
+                        .btn{
+                            background-color: #313233;
+                            font-weight: bold;
+                            color: #ffffff;
+                            padding: 1.7em 3em;
+                            width: 45%;
+
+                            span{ 
+                                padding-left: 5em;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -1783,33 +1864,28 @@
     color: #fff;
 }
 
-
-
-
-ul.udhaya {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-}
-ul.udhaya li a{
-    text-decoration: none;
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-    font-weight: bold;
+.modal-container{
+    z-index: 10001;
 }
 
-ul.udhaya li a:hover{
-    background-color: red;
-    color: #fff;
+.hotel_container .content .overall_widget {
+    .page_progress-wrapper{
+        
+        display: inline-block;
+        min-height: 72vh;
+        text-align: center;
+        position: relative;
+
+        h2{
+            color: #ffffff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%);
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+    }
 }
 
-ul.udhaya .active{
-    background-color: red;
-    color: #fff;
-}
 
-ul.udhaya .active a{
-    background-color: red;
-    color: #fff;
-}
