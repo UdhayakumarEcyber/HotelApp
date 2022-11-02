@@ -54,7 +54,7 @@ export default function SwimmingPoolWidget() {
 
          
 
-     
+{/*      
       <Dialog
         fullScreen
         open={open}
@@ -79,7 +79,9 @@ export default function SwimmingPoolWidget() {
 
             <GymnasiumDetails />
         
-      </Dialog>
+      </Dialog> */}
+
+      
     </div>
   );
 }

@@ -52,7 +52,7 @@ export default function SwimmingPoolWidget() {
           </div> 
 
          
-
+{/* 
      
       <Dialog
         fullScreen
@@ -78,7 +78,10 @@ export default function SwimmingPoolWidget() {
 
 <Massage_parlourDetails />
         
-      </Dialog>
+      </Dialog> */}
+
+
+      
     </div>
   );
 }

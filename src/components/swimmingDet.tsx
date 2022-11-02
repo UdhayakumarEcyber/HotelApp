@@ -60,7 +60,7 @@ export default function SwimmingPoolWidget() {
           </div> 
 
          
-
+{/* 
      
       <Dialog
         fullScreen
@@ -84,9 +84,10 @@ export default function SwimmingPoolWidget() {
           </Toolbar>
         </AppBar>  
 
-<SwimmingPoolDetails />
+        <SwimmingPoolDetails />
         
-      </Dialog>
+      </Dialog> */}
+      
     </div>
   );
 }

@@ -26,6 +26,14 @@ import {useState} from "react";
  import AirConditionerWidget from './components/airConditioner'; 
  import RoomServicesWidget from './components/roomServices';
  import LightControlWidget from './components/lightControl';
+
+
+
+import SwimmingPoolDetails from './components/swimmingPoolDetails';   
+import HotelClubDetails from './components/hotelClubDetails';
+import Massage_parlourDetails from './components/massage_parlourDetails'; 
+import GymnasiumDetails from './components/gymnasiumDetails'; 
+ 
  
 
 interface IUIProps {
@@ -36,10 +44,12 @@ interface IUIProps {
 // let [inputValue, setInputValue] = React.useState<string | null>("10.00 USD"); 
 
 const HotelAppComponent: React.FunctionComponent<IUIProps> = (props) => {
+
+    const [active, setActive] = useState(null)
+    
     return (
         <div className="hotel_container">
-            <HashRouter>
-
+            <HashRouter> 
 
                   <SideBar/>  
 
@@ -48,9 +58,17 @@ const HotelAppComponent: React.FunctionComponent<IUIProps> = (props) => {
                         <TopBar />
 
                         <div className="overall_widget">
+                            
                             <Routes>
-                                <Route path="/" element={<HomeWidget />} />
-                                <Route path="hotel-services" element={<HotelServicesWidget />} /> 
+                                <Route  path="/"  element={<HomeWidget />} />
+                                <Route path="hotel-services" element={<HotelServicesWidget />} />    
+                                    
+                                <Route path="swimming-pool-details" element={<SwimmingPoolDetails />} />
+                                <Route path="gymnasium-details" element={<GymnasiumDetails />} />  
+                                <Route path="hotel-club-details" element={<HotelClubDetails />} />
+                                <Route path="massage_parlour-details" element={<Massage_parlourDetails />} />   
+                               
+                                <Route path="gymnasium-details" element={<GymnasiumDetails />} /> 
                                 <Route path="room-services" element={<RoomServicesWidget />} />
                                 <Route path="hotel-dine" element={<RoomDineWidget />} /> 
                                 <Route path="light-control" element={<LightControlWidget />} />

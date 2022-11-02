@@ -14,19 +14,27 @@ const SwimmingPoolDetails: React.FunctionComponent<IWidgetProps> = (props) => {
 
     return ( 
 
-      <div  className="facility_details">   
+      <div className="facility_widget-content">
+          <div className="room_services">   
+                             
+               <h5>SWIMMING POOL</h5>  
 
-            <div className="facility_widget-content"> 
-                {/* <h5>SWIMMING POOL</h5> */}
-                <em>FOR A REFRESHING DIP ON YOUR VACATION</em> 
-                <p>Take a break from the midday heat by diving into one of our lavish swimming pools – it’s the perfect way to refresh yourself and relax as the tropical sun reaches its zenith. Here at the ABC Beach Resort and Spa, guests have unlimited access to two spectacular swimming pools.</p>
+               <div className="widget_wrapper"> 
 
-                <p>Take a break from the midday heat by diving into one of our lavish swimming pools – it’s the perfect way to refresh yourself and relax as the tropical sun reaches its zenith. Here at the ABC Beach Resort and Spa, guests have unlimited access to two spectacular swimming pools.</p>
+                    <div className="facility_widget-content">  
+                        <em>FOR A REFRESHING DIP ON YOUR VACATION</em> 
+                        <p>Take a break from the midday heat by diving into one of our lavish swimming pools – it’s the perfect way to refresh yourself and relax as the tropical sun reaches its zenith. Here at the ABC Beach Resort and Spa, guests have unlimited access to two spectacular swimming pools.</p>
 
-                <div className="facility_pict">
-                    <img src="https://static.iviva.com/images/Udhayimages/Hotel/swimming-pool.jpg" />
-                </div>
-            </div>   
+                        <p>Take a break from the midday heat by diving into one of our lavish swimming pools – it’s the perfect way to refresh yourself and relax as the tropical sun reaches its zenith. Here at the ABC Beach Resort and Spa, guests have unlimited access to two spectacular swimming pools.</p>
+
+                        <div className="facility_pict">
+                            <img src="https://static.iviva.com/images/Udhayimages/Hotel/swimming-pool.jpg" />
+                        </div>
+                   
+                    </div>
+              </div>
+
+          </div>
 
       </div>
  

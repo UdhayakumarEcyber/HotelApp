@@ -16,9 +16,16 @@ const Massage_parlourDetails: React.FunctionComponent<IWidgetProps> = (props) =>
 
     return ( 
 
-      <div  className="facility_details">    
+      <div className="facility_widget-content">
+     
+        
+      <div className="room_services">   
 
-            <div className="facility_widget-content"> 
+          <h5>MASSAGE PARLOUR</h5>  
+
+                <div className="widget_wrapper"> 
+
+                      <div className="facility_widget-content">  
                   
                   <em>FOR A REFRESHING DIP ON YOUR VACATION</em> 
                   <p>Take a break from the midday heat by diving into one of our lavish swimming pools – it’s the perfect way to refresh yourself and relax as the tropical sun reaches its zenith. Here at the ABC Beach Resort and Spa, guests have unlimited access to two spectacular swimming pools.</p>
@@ -29,8 +36,9 @@ const Massage_parlourDetails: React.FunctionComponent<IWidgetProps> = (props) =>
                       <img src="https://static.iviva.com/images/Udhayimages/Hotel/massage-parlour.jpg" />
                   </div>
             </div>   
-
+            </div>  
       </div>
+      </div>  
  
     ); 
 }

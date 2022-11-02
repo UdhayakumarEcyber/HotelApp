@@ -15,11 +15,7 @@
 
     // SideBar Start
 
-    .sideBar{
-        // display: inline-block; 
-        // width: 250px;
-        // background: #2B2A2D;
-        // height: 100%;
+    .sideBar{ 
 
         display: inline-block;
         width: 250px;
@@ -40,18 +36,37 @@
             }
         }
 
-        ul{
+        // .accordion-header {
+        //     cursor: pointer;
+        //   }
+          
+        //   .accordion-panel { 
+        //     margin: 2px;
+        //     padding: 5px;
+        //   }
+          
+        //   .accordion-panel > .accordion-body {
+        //     display: none;
+        //   }
+          
+        //   .accordion-panel.accordion-expanded > .accordion-body {
+        //     display: block;
+        //   }
+
+          
+
+        ul.accordion{
             display: inline-block;
             width: 100%;
             list-style: none;
             padding: 0;
             margin: 2em 0 0 0;
-            li{
+            li.accordion-panel{
                 display: inline-block;
                 width: 100%;
                 padding: 0 5%;
                 margin: 0;
-                a{
+                a.accordion-header{
                     display: inline-flex;
                     width: 100%;
                     text-decoration: none;
@@ -84,6 +99,51 @@
                         background-color: #3B3C3D;
                     }
                 }
+
+                .accordion-body {
+                    display: none;
+                  }
+
+                &.accordion-expanded{
+
+                    a.accordion-header{
+                        background-color: #3B3C3D;
+                    }
+
+                    .accordion-body {
+                         display: block;
+
+                         ul.sub_accordion{
+                             display: inline-block;
+
+                             li.sub_accordion-panel{
+                                display: inline-block;
+                                width: 100%;
+                                padding: 0 5%;
+
+                                a.sub_accordion-header{
+                                    display: block;
+                                    font-size: 0.95em;
+                                    font-style: normal;
+                                    color: #fff;
+                                    text-decoration: none;
+                                    padding: 12px 10px;
+                                    /* background: #f00; */
+                                    margin: 0em 0;
+                                    /* border-radius: 10px; */
+                                }
+
+                                &.sub_accordion-expanded{
+                                    a.sub_accordion-header{
+                                        color: #00f8ff;
+                                    }
+                                }
+                             }
+                         }
+                    }
+                }
+
+               
             }
         }
     } 
@@ -649,28 +709,8 @@
                  }
              }
          }
-
-         &.deal_offer{
-            .deal_widget-content-lft{
-                width: 100% ;
-                margin-top: 3em;
-
-                h2{
-                    font-size: 3.5em;
-                    color: #ffffff;
-                    margin: 1em 0 1em 0;
-                    padding: 0;
-                }
-
-                button.prize{
-                    background-color: #FFFFFF;
-                    padding: 11px 1.3em;
-                    text-transform: capitalize;
-                    color: #424242;
-                }
-
-            }
-         }
+ 
+        
      
      }
     
@@ -1041,7 +1081,7 @@
         border-radius: 12px;
         padding: 2.5em 3em;
         box-shadow: 0px 0px 8px #353535;
-        margin-bottom: 4em;
+        margin-bottom: 1em;
 
         h6{
             font-size: 1em;
@@ -1075,15 +1115,15 @@
 
     .foodlist{
         display: inline-block;
-        width: 70%;
+        width: 73%;
         padding: 0;
 
         li{
             display: inline-block;
-            width: 21%;
+            width: 22%;
             background: #4F5051;
             height: 85%;
-            margin: 2em 3.2em 1.2em 0em;
+            margin: 2em 2em 1em 0em;
             border-radius: 10px;
             box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.1607843137);
             text-align: center;
@@ -1130,7 +1170,7 @@
 
     .my_order{
         display: inline-block;
-        width: 30%;
+        width: 27%;
         vertical-align: top;
         margin-top: 3em;
         background: #4F5051;
@@ -1140,7 +1180,7 @@
         box-shadow: 0px 3px 26px rgb(0 0 0 / 16%);
         padding: 1em 2em 2em;
         border-radius: 10px;
-        margin-top: 2em;
+        margin-top: 3em;
         color: #ffffff;
         position: relative;
 
@@ -1835,10 +1875,45 @@
     }
 
 }
+.hotel_container .content .overall_widget{ 
 
-// .css-m9glnp-MuiPaper-root-MuiDialog-paper{
-//     width: 80%!important;
-// }
+        .deal_offer{
+            background: transparent;
+
+            .facility_details{
+                padding: 0 0;
+                background: transparent;
+            }
+
+            .widget_wrapper.food_category{
+                padding: 0;
+                background: transparent;
+                box-shadow: none;
+               
+            }
+
+            .deal_widget-content-lft{
+                width: 100% ;
+                margin-top: 3em;
+
+                h2{
+                    font-size: 3.5em;
+                    color: #ffffff;
+                    margin: 1em 0 1em 0;
+                    padding: 0;
+                }
+
+                button.prize{
+                    background-color: #FFFFFF;
+                    padding: 11px 1.3em;
+                    text-transform: capitalize;
+                    color: #424242;
+                }
+
+            }
+        }
+}
+
 .css-10ghrmp-MuiPaper-root-MuiAppBar-root{
     background: #4f4f4f!important;
     box-shadow: none;
@@ -1869,6 +1944,8 @@
 }
 
 .hotel_container .content .overall_widget {
+    margin-bottom: 2em;
+
     .page_progress-wrapper{
         
         display: inline-block;
@@ -1889,3 +1966,19 @@
 }
 
 
+.accordion-header {
+  cursor: pointer;
+}
+
+.accordion-panel { 
+  margin: 2px;
+  padding: 5px;
+}
+
+.accordion-panel > .accordion-body {
+  display: none;
+}
+
+.accordion-panel.accordion-expanded > .accordion-body {
+  display: block;
+}
